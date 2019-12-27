@@ -209,6 +209,7 @@ export class DraggableGrid<DataType extends IBaseItemType> extends React.Compone
 
   private setActiveBlock = (itemIndex: number) => {
     this.panResponderCapture = true
+    _this.props.onDragWillStart && _this.props.onDragWillStart(); // added this line
     this.setState(
       {
         activeItemIndex: itemIndex,
